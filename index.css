@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  height: 90px;
+  width: 90px;
+  cursor: pointer;
+}
+
+.search-input {
+  height: 25px;
+  width: 200px;
+  padding: 0 0 0 5px;
+}
+
+.search-btn {
+  margin: 0 0 0 10px;
+  padding: 6 20;
+  background-color: royalblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icon {
+  height: 40px;
+  width: 40px;
+  padding: 0 8px 0 0;
+  cursor: pointer;
+}
