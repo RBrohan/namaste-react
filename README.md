@@ -19,3 +19,20 @@
 - It provides you with hosting your app on HTTPs
 - It does Tree Shaking which means it will remove unused code
 - It has a different build for dev and production build
+
+# Two types of Export/Import
+
+- Default Export/Import
+
+export default component
+import Component from "path";
+
+- Named Export/Import
+
+export const Component
+import {Component} from "path"
+
+# React Hooks
+
+- Normal JavaScript utility functions
+  - useState() -> Super powerful State variables in React
