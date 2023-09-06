@@ -36,3 +36,9 @@ import {Component} from "path"
 
 - Normal JavaScript utility functions
   - useState() -> Super powerful State variables in React
+  - useEffect()
+
+# Two types of Routing in web applications
+
+- Client Side Routing
+- Server Side Routing
