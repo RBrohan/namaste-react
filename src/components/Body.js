@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { restaurantWithIsOpen } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useBody from "../utils/useBody";
@@ -12,7 +12,11 @@ const Body = () => {
     setListOfRestaurants,
     searchRestaurant,
     setSearchRestaurant,
+    loggedInUser,
+    setUserName,
   } = useBody();
+
+  const RestaurantCardOpen = restaurantWithIsOpen(RestaurantCard);
 
   const onlineStatus = useOnlineStatus();
 
@@ -62,6 +66,15 @@ const Body = () => {
             Top Rated Restaurant
           </button>
         </div>
+        <div className="py-4 ml-4 flex items-center p-2">
+          <label>Username :</label>
+          <input
+            type="text"
+            className="border border-black p-1"
+            value={loggedInUser}
+            onChange={(event) => setUserName(event.target.value)}
+          />
+        </div>
       </div>
 
       <div className="flex justify-center flex-wrap ml-[calc(10%+36px)] mr-[calc(10%+36px)]">
@@ -70,7 +83,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard restaurantData={restaurant} />
+            {restaurant.info.veg ? (
+              <RestaurantCardOpen restaurantData={restaurant} />
+            ) : (
+              <RestaurantCard restaurantData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

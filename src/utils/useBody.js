@@ -1,10 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { SWIGGY_API } from "./constants";
+import UserContext from "../utils/UserContext";
 
 const useBody = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchRestaurant, setSearchRestaurant] = useState("");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -30,6 +33,8 @@ const useBody = () => {
     setFilteredRestaurant,
     searchRestaurant,
     setSearchRestaurant,
+    loggedInUser,
+    setUserName,
   };
 };
 
